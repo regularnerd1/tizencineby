@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #050505;
+  color: white;
+  overflow: hidden; /* No scrollbars on TV */
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center top;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #050505 0%, transparent 60%),
+              linear-gradient(to right, rgba(5,5,5,0.9) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 40%;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.tv-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tv-btn.secondary {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.tv-btn.focused {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.8), 0 10px 20px rgba(0,0,0,0.5);
+  background-color: white;
+  color: black;
+}
+
+/* MOVIE ROWS */
+.rows-container {
+  margin-top: -5vh;
+  position: relative;
+  z-index: 20;
+  padding-left: 5%;
+}
+
+.row-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.movie-row {
+  display: flex;
+  gap: 1.5rem;
+  overflow: visible;
+}
+
+.movie-card {
+  width: 15vw;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-card.focused {
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.9), 0 15px 30px rgba(0,0,0,0.6);
+  z-index: 50;
+}
+
+/* PLAYER */
+.player-container {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.back-btn.focused {
+  border-color: white;
+  transform: scale(1.1);
+}
