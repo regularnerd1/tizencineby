@@ -1,0 +1,27 @@
+{
+  "name": "tizencineby",
+  "appName": "TizenCineby",
+  "version": "1.0.0",
+  "description": "Cineby.at module for TizenBrew with TV Remote Support",
+  "packageType": "mods",
+  "websiteURL": "https://www.cineby.at/",
+  "main": "dist/userScript.js",
+  "author": "Antigravity",
+  "keys": [
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "Enter",
+    "Return",
+    "Back"
+  ],
+  "scripts": {
+    "build": "esbuild src/userScript.js --bundle --minify --target=es2015 --outfile=dist/userScript.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "spatial-navigation-js": "^1.0.0"
+  },
+  "license": "GPL-3.0-only"
+}
